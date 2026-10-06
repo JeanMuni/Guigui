@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gestão Viária Escolar | CE Rancho Alegre</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+
+  <!-- Topo do Sistema -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand">
+        <i class="ph ph-shield-check brand-icon"></i>
+        <div>
+          <h2>Colégio Estadual Rancho Alegre</h2>
+          <span class="sub-brand">Ensino Fundamental e Médio • Rancho Alegre D'Oeste - PR</span>
+        </div>
+      </div>
+      <div class="project-tag">
+        <i class="ph ph-award"></i> Prêmio Guigui Terres 2026
+      </div>
+    </div>
+  </header>
+
+  <div class="app-container">
+    <!-- Menu de Abas (Navegação por Pastas) -->
+    <nav class="tabs-nav">
+      <button class="tab-btn active" onclick="switchTab('inicio')">
+        <i class="ph ph-house"></i>
+        <span>Visão Geral</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('diagnostico')">
+        <i class="ph ph-magnifying-glass"></i>
+        <span>Diagnóstico Viário</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('simulador')">
+        <i class="ph ph-scooter"></i>
+        <span>Simulador EPI</span>
+      </button>
+      <button class="tab-btn" onclick="switchTab('peticao')">
+        <i class="ph ph-file-text"></i>
+        <span>Petição Digital</span>
+      </button>
+    </nav>
+
+    <!-- Conteúdo Dinâmico das Pastas/Telas -->
+    <main class="content-area">
+
+      <!-- TELA 1: VISÃO GERAL -->
+      <section id="tab-inicio" class="tab-content active">
+        <div class="hero-card">
+          <div class="hero-overlay"></div>
+          <div class="hero-text">
+            <span class="badge">Iniciativa Tecnológica & Pedagógica</span>
+            <h1>Mobilidade Ativa e Segurança no Entorno Escolar</h1>
+            <p>Plataforma desenvolvida pelos estudantes do Colégio Estadual Rancho Alegre para mapear riscos no trânsito, promover o uso de EPIs e mobilizar a comunidade de Rancho Alegre D'Oeste.</p>
+            <div class="hero-buttons">
+              <button class="btn btn-primary" onclick="switchTab('simulador')">
+                <i class="ph ph-calculator"></i> Acessar Simulador de Risco
+              </button>
+              <button class="btn btn-outline" onclick="switchTab('peticao')">
+                <i class="ph ph-pen-nib"></i> Assinar Petição Pública
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="quick-stats-grid">
+          <div class="stat-card">
+            <i class="ph ph-map-pin stat-icon"></i>
+            <div>
+              <h3>Localização</h3>
+              <p>Perímetro Escolar CE Rancho Alegre</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="ph ph-warning-octagon stat-icon warning"></i>
+            <div>
+              <h3>Foco de Ação</h3>
+              <p>Placas, Faixas de Pedestre & Capacete</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <i class="ph ph-users-three stat-icon success"></i>
+            <div>
+              <h3>Engajamento</h3>
+              <p>Comunidade Escolar & Moradores</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TELA 2: DIAGNÓSTICO -->
+      <section id="tab-diagnostico" class="tab-content">
+        <div class="page-title">
+          <h2><i class="ph ph-magnifying-glass"></i> Mapeamento e Diagnóstico de Campo</h2>
+          <p>Análise minuciosa dos desafios de segurança viária no entorno da nossa escola</p>
+        </div>
+
+        <div class="grid-2col">
+          <div class="image-frame">
+            <img src="fachada.jpg" alt="Fachada do Colégio Estadual Rancho Alegre">
+            <div class="image-label">
+              <i class="ph ph-camera"></i> Fachada do Colégio Estadual Rancho Alegre (Ensino Fundamental e Médio)
+            </div>
+          </div>
+
+          <div class="diag-list">
+            <div class="diag-card">
+              <div class="diag-card-icon"><i class="ph ph-signpost"></i></div>
+              <div>
+                <h4>Déficit de Sinalização Escolar</h4>
+                <p>Identificada a ausência de placas regulamentares de área escolar e marcação horizontal (faixa de pedestres) na via frontal.</p>
+              </div>
+            </div>
+
+            <div class="diag-card">
+              <div class="diag-card-icon"><i class="ph ph-gauge"></i></div>
+              <div>
+                <h4>Incompatibilidade de Velocidade e Ruído</h4>
+                <p>Tráfego de veículos em velocidades inadequadas para perímetro escolar, somado ao ruído excessivo de motores.</p>
+              </div>
+            </div>
+
+            <div class="diag-card">
+              <div class="diag-card-icon"><i class="ph ph-shield-warning"></i></div>
+              <div>
+                <h4>Trânsito Vulnerável em Patinetes/Bikes</h4>
+                <p>Alunos deslocam-se de patinetes elétricos e bicicletas sem o uso de capacetes, coletes ou luzes de sinalização noturna.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TELA 3: SIMULADOR -->
+      <section id="tab-simulador" class="tab-content">
+        <div class="page-title">
+          <h2><i class="ph ph-scooter"></i> Simulador Interativo de Risco no Trânsito</h2>
+          <p>Verifique o seu grau de proteção individual ao conduzir bicicletas ou patinetes no perímetro do colégio</p>
+        </div>
+
+        <div class="card-box quiz-container">
+          <form id="quizForm">
+            <div class="question-block">
+              <label><i class="ph ph-number-circle-one"></i> Você utiliza capacete de segurança durante o trajeto para a escola?</label>
+              <div class="radio-options">
+                <label class="radio-btn"><input type="radio" name="q1" value="35"> Sempre utilizo</label>
+                <label class="radio-btn"><input type="radio" name="q1" value="15"> Ocasionalmente</label>
+                <label class="radio-btn"><input type="radio" name="q1" value="0"> Nunca utilizo</label>
+              </div>
+            </div>
+
+            <div class="question-block">
+              <label><i class="ph ph-number-circle-two"></i> Seu equipamento dispõe de iluminação (LED) ou refletores?</label>
+              <div class="radio-options">
+                <label class="radio-btn"><input type="radio" name="q2" value="35"> Possui luzes dianteiras e traseiras</label>
+                <label class="radio-btn"><input type="radio" name="q2" value="15"> Apenas refletores passivos</label>
+                <label class="radio-btn"><input type="radio" name="q2" value="0"> Não possui sinalização luminosa</label>
+              </div>
+            </div>
+
+            <div class="question-block">
+              <label><i class="ph ph-number-circle-three"></i> Como procede ao cruzar as vias do entorno do colégio?</label>
+              <div class="radio-options">
+                <label class="radio-btn"><input type="radio" name="q3" value="30"> Reduzo a velocidade e olho ambos os lados</label>
+                <label class="radio-btn"><input type="radio" name="q3" value="10"> Mantenho a velocidade com atenção parcial</label>
+                <label class="radio-btn"><input type="radio" name="q3" value="0"> Atravesso sem parar</label>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary btn-block" onclick="calcularSeguranca()">
+              <i class="ph ph-check-circle"></i> Analisar Diagnóstico Individual
+            </button>
+          </form>
+
+          <div id="resultadoQuiz" class="result-display hidden"></div>
+        </div>
+      </section>
+
+      <!-- TELA 4: PETIÇÃO DIGITAL -->
+      <section id="tab-peticao" class="tab-content">
+        <div class="page-title">
+          <h2><i class="ph ph-file-text"></i> Petição Digital por Sinalização Viária</h2>
+          <p>Assine para fundamentar o requerimento oficial enviado às autoridades municipais de Rancho Alegre D'Oeste</p>
+        </div>
+
+        <div class="grid-2col">
+          <div class="card-box">
+            <h3>Registo de Apoio</h3>
+            <p class="sub-text">Seus dados serão gravados na base oficial do projeto.</p>
+            
+            <form id="formPeticao">
+              <div class="form-group">
+                <label for="nome">Nome Completo</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+              </div>
+
+              <div class="form-group">
+                <label for="vinculo">Vínculo Comunitário</label>
+                <select id="vinculo" required>
+                  <option value="">Selecione...</option>
+                  <option value="Estudante do CE Rancho Alegre">Estudante do CE Rancho Alegre</option>
+                  <option value="Professor / Funcionário">Professor / Funcionário</option>
+                  <option value="Pai / Responsável">Pai / Responsável</option>
+                  <option value="Morador de Rancho Alegre D'Oeste">Morador de Rancho Alegre D'Oeste</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">
+                <i class="ph ph-paper-plane-right"></i> Enviar Assinatura
+              </button>
+            </form>
+          </div>
+
+          <div class="card-box stats-box">
+            <div class="counter-display">
+              <span class="count-number" id="contadorApoios">...</span>
+              <p>Apoiadores Registados no Sistema</p>
+            </div>
+            <hr class="divider">
+            <h4>Assinaturas Recentes:</h4>
+            <div id="listaApoiadores" class="signatures-list">
+              <div class="loading">Buscando dados na nuvem...</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Rodapé Institucional -->
+  <footer class="app-footer">
+    <div class="footer-container">
+      <p>© 2026 Colégio Estadual Rancho Alegre — Ensino Fundamental e Médio[cite: 26].</p>
+      <p>Desenvolvido pelos estudantes no âmbito do <strong>Prêmio Guigui Terres 2026</strong> (SEED-PR / Detran-PR)[cite: 2].</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
